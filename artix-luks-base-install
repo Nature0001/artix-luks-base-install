@@ -45,7 +45,7 @@ echo -ne "$cryptpass" | cryptsetup open ${targetdisk}p2 cryptlvm -d -
 # Create logical volumes.
 pvcreate /dev/mapper/cryptlvm
 vgcreate $cvg /dev/mapper/cryptlvm
-lvcreate -L 12G $cvg -n swap
+lvcreate -L 8G $cvg -n swap
 lvcreate -l 100%FREE $cvg -n root
 
 # Make filesystems.
